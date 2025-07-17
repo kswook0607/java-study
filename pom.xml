@@ -13,4 +13,10 @@
 		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
 
+	<modules>
+		<module>chapter01</module>
+		<module>drill01</module>
+		<module>drill02</module>
+		<module>drill03</module>
+	</modules>
 </project>
