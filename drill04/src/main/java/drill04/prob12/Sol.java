@@ -15,6 +15,8 @@ import java.util.Scanner;
  * 
  */
 
+// 이해가 안됩니다 ㅠㅠ
+
 public class Sol {
 
 	public static void main(String[] args) {
@@ -23,12 +25,21 @@ public class Sol {
 		
 		System.out.print("숫자를 입력하세요[2 - ]: ");
 		int number = scanner.nextInt();
+		scanner.close();
 		
-		System.out.println(number);
+		boolean isPrime = true;
+		for(int i = 2; i < number; i++) {
+			
+			if(number % i == 0) {
+				
+				isPrime = false;
+				break;				
+			}
+			
+		}
 		
-		scanner.close();	
-		
-		
-	}
+		System.out.println(number + "는(은)" + (isPrime ? "소수입니다" : "소수가 아닙니다"));
+					
+			}
 
 }
