@@ -18,6 +18,9 @@ public class Ex17SwitchExample02 {
 			case 6 :
 				System.out.println("D");
 				break;
+			case 0 :
+				System.out.println("A");
+				break;
 			default :
 				System.out.println("F");
 		}
