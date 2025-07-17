@@ -1,4 +1,4 @@
-package drill02.prob04;
+package prob04;
 
 /**
  * 문제 4. 형변환 결과 예측

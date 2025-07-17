@@ -1,4 +1,4 @@
-package drill02.prob05;
+package prob05;
 
 /**
  * 문제 5. 산술/논리 연산

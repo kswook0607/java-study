@@ -1,4 +1,4 @@
-package drill02.prob07;
+package prob07;
 
 /**
  * 

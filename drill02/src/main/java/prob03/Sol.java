@@ -1,4 +1,4 @@
-package drill02.prob03;
+package prob03;
 
 /**
  * 문제 3. 상수 선언
