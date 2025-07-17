@@ -12,6 +12,16 @@ package drill04.prob04;
 public class Sol {
 
 	public static void main(String[] args) {
+		
+		int sum = 0;
+		int i = 0;
+				
+		for(i = 0; i <= 99; i++ ) {
+			
+			sum = sum + (i + 1);
+			
+		}
+		System.out.println(sum);
 
 	}
 

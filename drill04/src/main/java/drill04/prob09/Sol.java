@@ -14,6 +14,33 @@ package drill04.prob09;
 public class Sol {
 
 	public static void main(String[] args) {
+		
+		int i = 1;
+		for(i = 1; i <= 15; i++) {
+		
+			if(i % 3 == 0 && i % 5 != 0) {
+				
+				System.out.print("Fizz" + " ");
+				
+			}else if(i % 5 == 0 && i % 3 != 0) {
+				
+				System.out.print("Buzz" + " ");
+				
+			}else if(i % 3 ==0 && i % 5 ==0) {
+				
+				System.out.print("FizzBuzz" + " ");	
+				
+			}else {
+				
+				System.out.print(i + " ");
+				
+			}
+		}					
+						
 	}
+			
+			
+}			
+				
 
-}
+

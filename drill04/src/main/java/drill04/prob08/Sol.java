@@ -11,6 +11,18 @@ package drill04.prob08;
 public class Sol {
 
 	public static void main(String[] args) {
+		
+		
+		char i = 'A';
+				
+		while(i < 91) {
+			
+			System.out.print(i);
+			i++;
+								
+		}
+		
+		
 
 	}
 

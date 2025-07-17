@@ -10,7 +10,18 @@ package drill04.prob06;
 public class Sol {
 
 	public static void main(String[] args) {
-	
+		
+		int i = 1;
+		int sum = 1;
+		
+		while(i < 9 ) {
+			
+			sum = sum * (i + 2);
+			i = i + 2;
+		
+		}
+		System.out.println(sum);
+		
 	}
 
 }
