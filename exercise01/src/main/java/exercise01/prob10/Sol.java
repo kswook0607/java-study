@@ -17,7 +17,10 @@ public class Sol {
 		//
 
 		System.out.println("\nAfter Sort.");
+//		System.out.println(Arrays.toString(data));
 
+		
+		
 		for (int i = 0; i < count; i++) {
 			System.out.print(data[i] + " ");
 		}		
