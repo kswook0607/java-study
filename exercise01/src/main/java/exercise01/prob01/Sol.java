@@ -10,6 +10,15 @@ public class Sol {
 		System.out.print("정수: ");
 		int n = scanner.nextInt();
 		
+		if(n<0) {
+			
+			System.out.println("절대값: " + n * -1);
+		}else {
+			
+			System.out.println("절대값: " +n);
+		}
+		
+		
 		
 		scanner.close();
 	}
