@@ -20,5 +20,7 @@
 		<module>drill03</module>
 		<module>drill04</module>
 		<module>drill5</module>
+		<module>exercise01</module>
+		<module>exercise02</module>
 	</modules>
 </project>
