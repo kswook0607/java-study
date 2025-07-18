@@ -11,7 +11,21 @@ public class Sol {
 		
 		/* 코드 작성 */
 		
-		System.out.println(Arrays.toString(numbers));
+		for(int i = 0; i < numbers.length; i++) {
+			
+			numbers[i] = scanner.nextInt();
+			
+		}
+		
+		for(int j = 0 ; j < numbers.length/2 ; j++ ) {
+			
+			int swap = numbers[j];
+			numbers[j] = numbers[numbers.length - 1 - j];
+			numbers[numbers.length - 1 - j] = swap;
+						
+		}
+				
+		System.out.println("뒤집힌 배열: " + Arrays.toString(numbers));
 		scanner.close();		
 	}
 
