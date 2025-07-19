@@ -11,6 +11,25 @@ public class Sol {
 
 		/* 코드 작성 */
 		
+		System.out.print("입력: ");
+		
+		int n = scanner.nextInt();
+		
+		for(int i : MONEYS) {
+			
+			int c = n / i;
+			if(c > 0) {
+				System.out.println(i + "원" + c + "개");
+				
+			}
+			n = n % i;			
+			
+		}
+		
+		
+		
+		
+		
 		scanner.close();
 	}
 
