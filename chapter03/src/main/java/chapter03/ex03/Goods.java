@@ -1,7 +1,6 @@
 package chapter03.ex03;
 
 public class Goods {
-		
 		public static int countOfGoods;
 				
 		private String name; //모든 접근이 가능
@@ -14,8 +13,7 @@ public class Goods {
 			//Goods.countofGoods++;
 			countOfGoods++;
 			
-			System.out.println(Math.PI);
-						
+		
 		}
 		
 		}

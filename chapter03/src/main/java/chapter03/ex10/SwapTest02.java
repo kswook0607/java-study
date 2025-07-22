@@ -15,7 +15,9 @@ public class SwapTest02 {
 	}
 
 	public static void swap (int m, int n){
-		
+		int temp = m;
+		m = n;
+		n = temp;
 		
 	}
 	
