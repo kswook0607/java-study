@@ -1,22 +1,20 @@
-package chapter03.ex01;
+package chapter03ex14;
 
 public class GoodsApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 
 		Goods camera = new Goods();
 		camera.name = "nikon";
+		//protected 는 같은 패키기 접근이 가능
+		//더 중요한것은 자식에서 접근이 가능
+		
 		camera.price = 400000;
-		camera.countSold = 20;
+		
 		camera.countStock = 20;
 		
-		System.out.println(camera.name);
-		System.out.println(camera.price);
-		System.out.println(camera.countSold);
-		System.out.println(camera.countStock);
-	
+//		camera.countSold = 20 // 
 	}
 
 }
