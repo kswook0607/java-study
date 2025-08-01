@@ -11,6 +11,8 @@ public class NsLookup {
 		Scanner scanner = new Scanner(System.in);
 
 		while (true) {
+			
+						
 			System.out.println(">>");
 			String line = scanner.nextLine();
 
@@ -20,14 +22,18 @@ public class NsLookup {
 
 			try {
 
-				InetAddress[] InetAddresses = InetAddress.getAllByName(line);
-				
-				System.out.println(InetAddresses.length);
-				
+				InetAddress[] inetAddresses = InetAddress.getAllByName(line);
+
+//				for(InetAddress inetAddress : inetAddresses) {
+//					System.out.println(inetAddress.getHostAddress());
+//				}
+//				
+				System.out.println(inetAddresses.length);
+
 			}
 
 			catch (UnknownHostException ex) {
-				System.out.println("알려진 호스트가 없습니다.");
+				System.out.println(line + "알려진 호스트가 없습니다.");
 
 //			ex.printStackTrace();
 			}
