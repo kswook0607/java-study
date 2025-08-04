@@ -10,6 +10,8 @@ import java.net.Socket;
 import java.nio.file.Files;
 
 public class HttpRequestHandler extends Thread {
+	
+	private static final String SUPPORT_HTTP_PROTOCOL = "HTTP/1,1";
 	private static final String DOCUMENT_ROOT = "./webapp";
 	
 	private Socket socket;
@@ -59,9 +61,10 @@ public class HttpRequestHandler extends Thread {
 				// method: POST, PUT, DELETE, HEAD, CONNECT
 				// SimpleHttpServer에서는 무시(400 Bad Request)
 				//response400Error(outputStream);
+				response400Error(outputStream);
 			}
 			
-			// outputStream.write("HTTP/1.1 200 OK\n".getBytes("utf-8"));
+			// outputStream.write((SUPPORT_HTTP_PROTOCOL + "200 OK\n").getBytes("utf-8"));
 			// outputStream.write("Content-Type:text/html; charset=utf-8\n".getBytes("utf-8"));
 			// outputStream.write("\n".getBytes("utf-8"));
 			// outputStream.write("<h1>이 페이지가 잘 보이면 실습과제 SimpleHttpServer를 시작할 준비가 된 것입니다.</h1>".getBytes( "utf-8"));
@@ -87,7 +90,7 @@ public class HttpRequestHandler extends Thread {
 		
 		File file = new File(DOCUMENT_ROOT + url);
 		if(!file.exists()) {
-			// reponse404Error(outputStream);
+			response404Error(outputStream);
 			return;
 		}
 		
@@ -95,21 +98,36 @@ public class HttpRequestHandler extends Thread {
 		byte[] body = Files.readAllBytes(file.toPath());
 		String contentType = Files.probeContentType(file.toPath());
 		
-		outputStream.write("HTTP/1.1 200 OK\n".getBytes("utf-8"));
+		outputStream.write((SUPPORT_HTTP_PROTOCOL + "200 OK\n").getBytes("utf-8"));
 		outputStream.write(("Content-Type:" + contentType + "; charset=utf-8\n").getBytes("utf-8"));
 		outputStream.write("\n".getBytes("utf-8"));
 		outputStream.write(body);
 	}
-
-	private void response404Error(OutputStream outputStream) throws IOException {
-		String body = "<html><body><h1>404 Not Found</h1></body></html>";
-		outputStream.write("HTTP/1.1 404 Not Found\r\n".getBytes("utf-8"));
-		outputStream.write("Content-Type: text/html; charset=utf-8\r\n".getBytes("utf-8"));
-		outputStream.write(("Content-Length: " + body.getBytes("utf-8").length + "\r\n").getBytes("utf-8"));
-		outputStream.write("\r\n".getBytes("utf-8"));
-		outputStream.write(body.getBytes("utf-8"));
+	
+	private void response404Error(OutputStream outputStream) throws IOException{
+		File file = new File(DOCUMENT_ROOT + "/error/404.html");
+		
+		byte[] body = Files.readAllBytes(file.toPath());
+		String contentType = Files.probeContentType(file.toPath());
+		
+		outputStream.write((SUPPORT_HTTP_PROTOCOL + "404 File Not Found\n").getBytes("utf-8"));
+		outputStream.write(("Content-Type:" + contentType + "; charset=utf-8\n").getBytes("utf-8"));
+		outputStream.write("\n".getBytes("utf-8"));
+		outputStream.write(body);
+		
 	}
-
+	private void response400Error(OutputStream outputStream) throws IOException{
+		File file = new File(DOCUMENT_ROOT + "/error/400.html");
+		
+		byte[] body = Files.readAllBytes(file.toPath());
+		String contentType = Files.probeContentType(file.toPath());
+		
+		outputStream.write((SUPPORT_HTTP_PROTOCOL + "400 Bad Request\n").getBytes("utf-8"));
+		outputStream.write(("Content-Type:" + contentType + "; charset=utf-8\n").getBytes("utf-8"));
+		outputStream.write("\n".getBytes("utf-8"));
+		outputStream.write(body);
+	}
+	
 	public void consoleLog(String message) {
 		System.out.println("[HttpRequestHandler#" + getId() + "] " + message);
 	}
