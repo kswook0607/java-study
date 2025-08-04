@@ -100,14 +100,6 @@ public class HttpRequestHandler extends Thread {
 		outputStream.write("\n".getBytes("utf-8"));
 		outputStream.write(body);
 	}
-	private void response400Error(OutputStream outputStream) throws IOException {
-		String body = "<html><body><h1>400 Bad Request</h1></body></html>";
-		outputStream.write("HTTP/1.1 400 Bad Request\r\n".getBytes("utf-8"));
-		outputStream.write("Content-Type: text/html; charset=utf-8\r\n".getBytes("utf-8"));
-		outputStream.write(("Content-Length: " + body.getBytes("utf-8").length + "\r\n").getBytes("utf-8"));
-		outputStream.write("\r\n".getBytes("utf-8"));
-		outputStream.write(body.getBytes("utf-8"));
-	}
 
 	private void response404Error(OutputStream outputStream) throws IOException {
 		String body = "<html><body><h1>404 Not Found</h1></body></html>";
