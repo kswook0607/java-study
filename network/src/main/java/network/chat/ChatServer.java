@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ChatServer {
 	
-	private static final int PORT = 8099;
+	private static final int PORT = 9000;
 	
 	public static List<PrintWriter> clientList = new ArrayList<>();
 	

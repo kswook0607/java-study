@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ChatClient {
 	
 	private static final String SERVER_IP = "127.0.0.1";
-	private static final int PORT = 8090;
+	private static final int PORT = 9000;
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
